@@ -24,8 +24,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 // --- Routes ---
-app.use('/api/auth', authRoutes);
-app.use('/api/posts', postRoutes);
+app.use('/auth', authRoutes);
+app.use('/posts', postRoutes);
 
 app.get('/', (req, res) => {
   res.send('API is running on Vercel...');
