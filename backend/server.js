@@ -12,14 +12,35 @@ connectDB();
 
 const app = express();
 
+// --- CORS Setup ---
+const allowedOrigins = [
+    'http://localhost:5173', // local dev
+    'https://social-app-assignment-ten.vercel.app' // deployed frontend
+];
+
+
+app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin) return callback(null, true); // allow requests with no origin (Postman, server-to-server)
+        if (allowedOrigins.includes(origin)) {
+            callback(null, true); // allow this origin
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true
+}));
+
+
 // --- Middleware Setup ---
 
 // ********* FIX: Update CORS origin to match React port *********
-app.use(cors({
-    origin: 'http://localhost:5173', // **Use 5173 based on your Vite output**
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-}));
+// app.use(cors({
+//     origin: 'http://localhost:5173', // **Use 5173 based on your Vite output**
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     credentials: true,
+// }));
 // *************************************************************
 
 app.use(express.json());
