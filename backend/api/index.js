@@ -12,13 +12,28 @@ connectDB();
 
 const app = express();
 
-// --- Middleware ---
+// --- CORS Setup ---
+const allowedOrigins = [
+  'http://localhost:5173', // local dev
+  'https://social-app-assignment-ten.vercel.app' // deployed frontend
+];
+
+
 app.use(cors({
-  origin: '*', // You can make this specific later if needed
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true); // allow requests with no origin (Postman, server-to-server)
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true); // allow this origin
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
+  credentials: true
 }));
 
+
+// --- Middleware ---
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
