@@ -1,140 +1,114 @@
-Social Media Platform (MERN Stack)
+# 🌐 Social Media Platform (MERN Stack)
 
-🌟 Project Overview
+## 🌟 Project Overview
 
-This project is a fully functional, full-stack social media platform built using the MERN (MongoDB, Express, React, Node.js) stack. It is designed to provide users with a clean interface to share posts, interact with content, and connect with a community feed.
+This project is a fully functional, full-stack social media platform built using the MERN (MongoDB, Express, React, Node.js) stack. It provides users with a clean interface to share posts, interact with content, and engage with a community feed.
 
-The application is structured into two main parts: a robust Node.js/Express backend for handling data and logic, and a modern React application powered by Vite for the user interface.
+The application is divided into:
+- **Backend:** Node.js + Express for APIs and business logic
+- **Frontend:** React (Vite) for fast and modern UI
 
-✨ Key Features
+---
 
-User Authentication: Secure signup, login, and logout functionality.
+## ✨ Key Features
 
-Post Creation: Users can create new posts with text and optional media attachments (as indicated by the upload icon).
+- **User Authentication:** Secure signup, login, and logout
+- **Post Creation:** Create posts with text and optional media
+- **Real-time Feed:** Dynamic feed showing latest posts
+- **Rich Content:** Mentions (@user), tags (#tags), and event details
+- **Responsive UI:** Mobile-friendly navigation
+- **File Uploads:** Upload and serve media content
 
-Real-time Feed: A dynamic social feed that displays the latest posts from users (e.g., the post by "Rohan").
+---
 
-Detailed Content Display: Posts support rich content, including user mentions (@Gamer_Nexus), event details (EventTitleGamingFiesta), tags (#GamingFiesta), and interaction metrics (Likes, Comments).
+## 🛠️ Technology Stack
 
-Responsive Navigation: A simple, mobile-friendly navigation bar for accessing Home, Social, and Logout features.
+| Category | Technology | Description |
+|----------|-----------|------------|
+| Database | MongoDB | NoSQL database for scalable storage |
+| Backend | Node.js / Express | Server-side logic and APIs |
+| Frontend | React (Vite) | Fast and modern UI |
+| Middleware | Mongoose | ODM for MongoDB |
+| Auth | JWT | Secure authentication |
 
-File Uploads: Integration for handling and serving uploaded post media.
+---
 
-🛠️ Technology Stack
+## 🚀 Getting Started
 
-This application is built with the following core technologies:
+### 🔹 Prerequisites
 
-Category
+- Node.js (v18+)
+- npm or yarn
+- MongoDB (local or Atlas)
 
-Technology
+---
 
-Description
+## 🔧 Backend Setup
 
-Database
-
-MongoDB
-
-A flexible NoSQL database for scalable data storage.
-
-Backend
-
-Node.js / Express
-
-Server-side runtime and framework for API development.
-
-Frontend
-
-React (with Vite)
-
-A modern JavaScript library for building fast and interactive user interfaces.
-
-Middleware
-
-Mongoose
-
-ODM (Object Data Modeling) library for MongoDB and Node.js.
-
-Authentication
-
-JWT (JSON Web Tokens)
-
-For secure user session management.
-
-🚀 Getting Started
-
-Follow these steps to set up and run the project locally.
-
-Prerequisites
-
-Node.js (v18+)
-
-npm or yarn
-
-MongoDB Atlas or a local MongoDB instance
-
-1. Backend Setup
-
-Navigate to the backend directory, install dependencies, and configure the environment.
-
+```
 cd backend
 npm install
+```
 
+### Environment Variables
 
-Environment Variables
+Create `.env` file:
 
-Create a file named .env in the backend folder and add your configuration details:
-
-# .env file for backend
+```
 PORT=5000
 MONGO_URI="YOUR_MONGO_DB_CONNECTION_STRING_HERE"
 JWT_SECRET="YOUR_VERY_STRONG_SECRET_KEY"
+```
 
+### Run Backend
 
-Run the Backend
-
-Start the Express server using nodemon for development:
-
+```
 npm run dev
+```
 
+Backend runs at: http://localhost:5000
 
-The backend API will be running at http://localhost:5000 (or the port specified in your .env).
+---
 
-2. Frontend Setup
+## 💻 Frontend Setup
 
-In a new terminal window, navigate to the frontend directory and install dependencies.
-
+```
 cd ../frontend
 npm install
+```
 
+### Run Frontend
 
-Run the Frontend
-
-Start the React application using Vite:
-
+```
 npm run dev
+```
 
+App runs at: http://localhost:5173
 
-The application will typically open in your browser at http://localhost:5173.
+---
 
-📂 Project Structure
+## 📂 Project Structure
 
-The project is logically separated for clean development:
-
+```
 SOCIAL-APP-ASSIGNMENT/
-├── backend/                  # Node.js/Express API
-│   ├── config/               # Database connection and config
-│   ├── controllers/          # Business logic for requests (e.g., post, user controllers)
-│   ├── middleware/           # Functions for authentication, error handling, etc.
-│   ├── models/               # Mongoose schemas (Post.js, User.js)
-│   ├── routes/               # API routes definitions
-│   ├── uploads/              # Storage for user-uploaded files
-│   ├── .env                  # Environment variables
-│   └── server.js             # Main server entry point
-└── frontend/                 # React application (Vite)
-    ├── src/                  # All React components and application logic
-    └── package.json          # Frontend dependencies
+│
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── uploads/
+│   ├── .env
+│   └── server.js
+│
+└── frontend/
+    ├── src/
+    └── package.json
+```
 
+---
 
-🤝 Contribution
+## 🤝 Contribution
 
 Feel free to suggest improvements, features, or report bugs by opening an issue!
